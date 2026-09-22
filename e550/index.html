@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e5500 - Cisco Catalyst 交换机产品参数、配置指南与固件下载</title>
+    <meta name="description" content="e5500（Cisco Catalyst 9500系列）官方产品中心。提供e5500交换机的详细规格参数、VLAN配置教程、堆叠技术指南及固件升级下载服务，助您构建高可靠的企业级网络。">
+    <meta name="keywords" content="e5500, Cisco Catalyst 9500, 企业交换机, 交换机配置, 网络设备, 固件下载">
+    <style>
+        :root {
+            --primary-color: #004890; /* Cisco Blue */
+            --secondary-color: #00bceb;
+            --accent-color: #ff9900;
+            --bg-color: #f4f6f9;
+            --text-color: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #003366 100%);
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 188, 235, 0.4);
+        }
+
+        /* Specs Grid */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .spec-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .spec-card h3 {
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .spec-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Configuration Guide */
+        .config-section {
+            background-color: var(--white);
+        }
+
+        .config-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .config-nav {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: var(--border-radius);
+        }
+
+        .config-nav li {
+            list-style: none;
+            margin-bottom: 10px;
+        }
+
+        .config-nav a {
+            display: block;
+            padding: 10px 15px;
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .config-nav a:hover, .config-nav a.active {
+            background-color: #e6f0fa;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .code-block {
+            background-color: #282c34;
+            color: #abb2bf;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+        .code-block::before {
+            content: 'CLI Command';
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-bottom-left-radius: 4px;
+        }
+
+        .example-box {
+            margin-top: 20px;
+            padding: 15px;
+            border-left: 4px solid var(--accent-color);
+            background-color: #fffaf0;
+            color: #8a6d3b;
+            font-size: 0.9rem;
+        }
+
+        /* Firmware Download */
+        .download-list {
+            list-style: none;
+        }
+
+        .download-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--white);
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border: 1px solid #eee;
+            transition: border-color 0.3s;
+        }
+
+        .download-item:hover {
+            border-color: var(--secondary-color);
+        }
+
+        .item-info h4 {
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .item-info p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .download-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .download-btn:hover {
+            background-color: #003366;
+        }
+
+        /* FAQ */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        details {
+            background: var(--white);
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        summary {
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            list-style: none;
+            position: relative;
+            padding-right: 40px;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+
+        details[open] summary::after {
+            content: '-';
+        }
+
+        details[open] summary {
+            border-bottom: 1px solid #eee;
+        }
+
+        .faq-answer {
+            padding: 20px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #999;
+            padding: 40px 0;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #999;
+            text-decoration: none;
+        }
+
+        .footer-col a:hover {
+            color: var(--white);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin-top: 15px;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .config-content {
+                grid-template-columns: 1fr;
+            }
+
+            .download-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-container">
+        <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+            <span>e5500</span> 资源中心
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#specs" class="active">产品参数</a></li>
+                <li><a href="#config">配置指南</a></li>
+                <li><a href="#firmware">固件下载</a></li>
+                <li><a href="#faq">常见问题</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Cisco Catalyst 9500 Series</h1>
+            <p>面向未来的企业级网络核心交换机。e5500系列提供高性能、高可靠性和安全特性，支持AI驱动的网络智能，是数据中心及园区网络的最佳选择。</p>
+            <a href="#firmware" class="btn btn-primary">查看最新固件</a>
+        </div>
+    </section>
+
+    <!-- Specs Section -->
+    <section id="specs" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>核心性能规格</h2>
+                <p>e5500系列采用硅-硅堆叠技术，提供线速转发性能与灵活的扩展能力。</p>
+            </div>
+            <div class="specs-grid">
+                <article class="spec-card">
+                    <h3>交换容量</h3>
+                    <p>高达 1.6 Tbps 非阻塞交换容量，支持全双工线速转发，满足高密度数据流需求。</p>
+                </article>
+                <article class="spec-card">
+                    <h3>端口密度</h3>
+                    <p>提供 48/24 个千兆以太网端口，支持 10/25/40/100/200/400/800Gbps 上行链路。</p>
+                </article>
+                <article class="spec-card">
+                    <h3>网络智能</h3>
+                    <p>内置基于AI的软件定义网络（SDN）功能，实现故障自愈与流量优化。</p>
+                </article>
+                <article class="spec-card">
+                    <h3>安全性</h3>
+                    <p>支持 IPsec VPN、AES 加密及 802.1X 认证，保障网络边界与内部数据安全。</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Configuration Section -->
+    <section id="config" class="section config-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>配置指南</h2>
+                <p>快速上手e5500交换机，掌握基础网络架构搭建与命令行操作。</p>
+            </div>
+            <div class="config-content">
+                <aside class="config-nav">
+                    <ul>
+                        <li><a href="#" class="active">基础设置</a></li>
+                        <li><a href="#">VLAN 配置</a></li>
+                        <li><a href="#">Trunk 与 Access 接口</a></li>
+                        <li><a href="#">静态路由配置</a></li>
+                        <li><a href="#">NTP 时间同步</a></li>
+                    </ul>
+                </aside>
+                <article class="config-detail">
+                    <h3>1. 基础网络设置</h3>
+                    <p>首次配置e5500交换机时，通常需要通过 Console 线缆连接终端进行命令行交互。确保交换机电源正常，指示灯状态正常。</p>
+                    <br>
+                    <h4>步骤一：进入全局配置模式</h4>
+                    <div class="code-block">
+enable<br>
+configure terminal<br>
+hostname Switch-Core-01
+                    </div>
+                    <div class="example-box">
+                        <strong>提示：</strong> 修改主机名有助于在日志中快速识别设备身份。
+                    </div>
+                    <br>
+                    <h4>步骤二：配置管理IP地址</h4>
+                    <div class="code-block">
+interface Vlan 1<br>
+ ip address 192.168.1.10 255.255.255.0<br>
+ no shutdown
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Firmware Section -->
+    <section id="firmware" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>固件下载</h2>
+                <p>获取最新的 Cisco IOS XE Software 版本，提升设备稳定性与功能。</p>
+            </div>
+            <ul class="download-list">
+                <li class="download-item">
+                    <div class="item-info">
+                        <h4>Catalyst 9500 - IOS-XE 17.9.2 (Stable Release)</h4>
+                        <p>适用于 Catalyst 9500 Series; 文件大小: 1.2GB; 发布日期: 2023-10-15</p>
+                    </div>
+                    <a href="#" class="download-btn">下载 .bin 文件</a>
+                </li>
+                <li class="download-item">
+                    <div class="item-info">
+                        <h4>Catalyst 9500 - IOS-XE 17.6.2 (Legacy)</h4>
+                        <p>适用于早期版本 9500; 文件大小: 1.1GB; 发布日期: 2022-05-20</p>
+                    </div>
+                    <a href="#" class="download-btn">下载 .bin 文件</a>
+                </li>
+                <li class="download-item">
+                    <div class="item-info">
+                        <h4>Release Notes (版本说明)</h4>
+                        <p>包含已知问题、新特性及升级建议的详细文档 (PDF)</p>
+                    </div>
+                    <a href="#" class="download-btn">查看文档</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section config-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>常见问题 (FAQ)</h2>
+            </div>
+            <div class="faq-container">
+                <details>
+                    <summary>e5500交换机支持哪些堆叠模式？</summary>
+                    <div class="faq-answer">
+                        e5500系列支持Cisco StackWise-Virtual技术，允许跨机箱进行虚拟化堆叠，实现多达 16 个交换机箱的逻辑堆叠，逻辑上视为一台交换机。
+                    </div>
+                </details>
+                <details>
+                    <summary>如何通过网页界面管理e5500？</summary>
+                    <div class="faq-answer">
+                        确保交换机配置了管理IP地址。在浏览器中输入 https://交换机管理IP地址。首次访问时，根据提示下载并安装设备根证书，然后使用管理员账号登录。
+                    </div>
+                </details>
+                <details>
+                    <summary>升级固件失败怎么办？</summary>
+                    <div class="faq-answer">
+                        如果升级失败，请检查电源供应是否稳定。使用“reload in X”命令设置定时重启，或使用“boot system flash:filename”命令手动指定启动文件进行修复。
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container footer-content">
+        <div class="footer-col">
+            <h4>e5500 资源中心</h4>
+            <p>致力于为网络工程师提供最全面的技术文档、配置指南与固件资源。</p>
+        </div>
+        <div class="footer-col">
+            <h4>快速链接</h4>
+            <ul>
+                <li><a href="#">Cisco 官方支持</a></li>
+                <li><a href="#">社区论坛</a></li>
+                <li><a href="#">合同下载</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>联系我们</h4>
+            <ul>
+                <li>support@e5500-example.com</li>
+                <li>400-123-4567</li>
+                <li>北京市海淀区科技园路88号</li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+</html>
