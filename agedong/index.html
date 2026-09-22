@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>age动画-日本独立动画工作室与先锋作品鉴赏</title>
+    <meta name="description" content="age动画官方网站。探索日本独立动画工作室AGE的先锋视觉艺术、经典实验短片及导演访谈。提供高清作品鉴赏、幕后制作解析及独立动画资讯。">
+    <meta name="keywords" content="age动画,AGE动画,日本独立动画,实验动画,先锋动画,AGE工作室">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --card-bg: #141414;
+            --text-main: #e0e0e0;
+            --text-muted: #888888;
+            --accent: #ff3d00;
+            --accent-hover: #ff5e1f;
+            --border: #333333;
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            bottom: 5px;
+            width: 4px;
+            background-color: var(--accent);
+        }
+
+        .section-link {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .section-link:hover {
+            color: var(--accent);
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 15px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: #fff;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://picsum.photos/seed/ageanime/1600/900.jpg') center/cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            z-index: 2;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #fff;
+            padding: 4px 10px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent);
+            color: #fff;
+            font-weight: 600;
+            border-radius: 2px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* Studio Info */
+        .studio-info {
+            padding: 80px 0;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .info-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .info-text p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .info-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        .info-image img {
+            width: 100%;
+            border-radius: 4px;
+            filter: grayscale(20%);
+            transition: filter 0.3s;
+        }
+
+        .info-image img:hover {
+            filter: grayscale(0%);
+        }
+
+        /* Works Grid */
+        .works-section {
+            padding: 80px 0;
+            background-color: var(--card-bg);
+        }
+
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .work-card {
+            background-color: var(--bg-color);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: 1px solid var(--border);
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            border-color: var(--accent);
+        }
+
+        .work-thumb {
+            position: relative;
+            padding-top: 140%; /* Aspect Ratio */
+            overflow: hidden;
+        }
+
+        .work-thumb img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .work-card:hover .work-thumb img {
+            transform: scale(1.05);
+        }
+
+        .work-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .work-card:hover .work-overlay {
+            opacity: 1;
+        }
+
+        .play-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(4px);
+        }
+
+        .play-icon::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-left: 12px solid #fff;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            margin-left: 4px;
+        }
+
+        .work-info {
+            padding: 20px;
+        }
+
+        .work-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .work-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .work-category {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* Featured / Spotlight */
+        .spotlight {
+            padding: 80px 0;
+        }
+
+        .spotlight-container {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 30px;
+        }
+
+        .spotlight-main {
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+            height: 400px;
+        }
+
+        .spotlight-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .spotlight-main::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+        }
+
+        .spotlight-content {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            z-index: 2;
+        }
+
+        .spotlight-title {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .spotlight-desc {
+            color: #ddd;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .spotlight-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .spotlight-item {
+            display: flex;
+            gap: 15px;
+            background-color: var(--card-bg);
+            padding: 15px;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            transition: border-color 0.3s;
+        }
+
+        .spotlight-item:hover {
+            border-color: var(--accent);
+        }
+
+        .spotlight-item img {
+            width: 80px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 2px;
+        }
+
+        .spotlight-item-text h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .spotlight-item-text p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* News Section */
+        .news-section {
+            padding: 80px 0;
+            background-color: var(--card-bg);
+        }
+
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .news-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: var(--bg-color);
+            border-radius: 4px;
+            border-left: 3px solid var(--border);
+            transition: border-color 0.3s;
+        }
+
+        .news-item:hover {
+            border-left-color: var(--accent);
+        }
+
+        .news-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            min-width: 100px;
+        }
+
+        .news-title {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .news-arrow {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #050505;
+            padding: 60px 0 20px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .footer-col p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #1a1a1a;
+            color: #555;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            .spotlight-container {
+                grid-template-columns: 1fr;
+            }
+            .spotlight-main {
+                height: 300px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .hero {
+                height: 500px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .news-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            .news-arrow {
+                align-self: flex-end;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">AGE<span>ANIME</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#works">作品鉴赏</a></li>
+                    <li><a href="#studio">关于工作室</a></li>
+                    <li><a href="#spotlight">深度解析</a></li>
+                    <li><a href="#news">资讯动态</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="菜单">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <span class="hero-tag">先锋视觉实验</span>
+                <h1>探索 AGE 动画的<br>独特美学与叙事边界</h1>
+                <p>AGE 动画致力于打破传统商业动画的框架，通过独特的视觉风格和前卫的叙事手法，为观众呈现具有强烈个人风格和哲学深度的动画影像。</p>
+                <a href="#works" class="btn">开始鉴赏</a>
+            </div>
+        </section>
+
+        <!-- Studio Info -->
+        <section id="studio" class="studio-info">
+            <div class="container">
+                <div class="info-grid">
+                    <div class="info-text">
+                        <h2>关于 AGE Studio</h2>
+                        <p>AGE 动画是由一群对动画艺术有极致追求的创作者成立的工作室。我们拒绝千篇一律的流水线生产，坚持将个人情感、社会观察与实验性技法融合，创造出独一无二的动画作品。</p>
+                        <p>我们的核心理念是“情绪的具象化”，试图通过光影的流动和角色的微表情，传达无法用语言完全描述的内心世界。</p>
+                        <div class="info-stats">
+                            <div class="stat-item">
+                                <h3>15+</h3>
+                                <p>原创短片</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>3</h3>
+                                <p>国际奖项</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>∞</h3>
+                                <p>创意可能</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-image">
+                        <img src="https://picsum.photos/seed/studioage/600/400.jpg" alt="AGE 动画工作室内部概念图">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Works -->
+        <section id="works" class="works-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">精选作品</h2>
+                    <a href="#" class="section-link">查看全部作品 →</a>
+                </div>
+                <div class="works-grid">
+                    <!-- Work Card 1 -->
+                    <article class="work-card">
+                        <div class="work-thumb">
+                            <img src="https://picsum.photos/seed/age1/400/600.jpg" alt="作品封面">
+                            <div class="work-overlay">
+                                <div class="play-icon"></div>
+                            </div>
+                        </div>
+                        <div class="work-info">
+                            <h3 class="work-title">霓虹回响</h3>
+                            <div class="work-meta">
+                                <span class="work-category">赛博朋克</span>
+                                <span>2023</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Work Card 2 -->
+                    <article class="work-card">
+                        <div class="work-thumb">
+                            <img src="https://picsum.photos/seed/age2/400/600.jpg" alt="作品封面">
+                            <div class="work-overlay">
+                                <div class="play-icon"></div>
+                            </div>
+                        </div>
+                        <div class="work-info">
+                            <h3 class="work-title">静谧时刻</h3>
+                            <div class="work-meta">
+                                <span class="work-category">实验短片</span>
+                                <span>2022</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Work Card 3 -->
+                    <article class="work-card">
+                        <div class="work-thumb">
+                            <img src="https://picsum.photos/seed/age3/400/600.jpg" alt="作品封面">
+                            <div class="work-overlay">
+                                <div class="play-icon"></div>
+                            </div>
+                        </div>
+                        <div class="work-info">
+                            <h3 class="work-title">重力逆行</h3>
+                            <div class="work-meta">
+                                <span class="work-category">奇幻</span>
+                                <span>2023</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Work Card 4 -->
+                    <article class="work-card">
+                        <div class="work-thumb">
+                            <img src="https://picsum.photos/seed/age4/400/600.jpg" alt="作品封面">
+                            <div class="work-overlay">
+                                <div class="play-icon"></div>
+                            </div>
+                        </div>
+                        <div class="work-info">
+                            <h3 class="work-title">未知的边境</h3>
+                            <div class="work-meta">
+                                <span class="work-category">叙事</span>
+                                <span>2021</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spotlight / Deep Dive -->
+        <section id="spotlight" class="spotlight">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">深度解析</h2>
+                </div>
+                <div class="spotlight-container">
+                    <div class="spotlight-main">
+                        <img src="https://picsum.photos/seed/spotlight/800/600.jpg" alt="深度解析主图">
+                        <div class="spotlight-content">
+                            <h3 class="spotlight-title">AGE 的色彩心理学：如何用光影控制观众情绪？</h3>
+                            <p class="spotlight-desc">深入探讨 AGE 动画中高饱和度与低对比度色调的交替使用，以及它们如何影响叙事节奏和角色心理状态的刻画。</p>
+                            <a href="#" class="btn">阅读全文</a>
+                        </div>
+                    </div>
+                    <div class="spotlight-list">
+                        <div class="spotlight-item">
+                            <img src="https://picsum.photos/seed/art1/100/100.jpg" alt="缩略图">
+                            <div class="spotlight-item-text">
+                                <h4>专访导演：打破次元壁的勇气</h4>
+                                <p>关于创作瓶颈与突破的独家访谈</p>
+                            </div>
+                        </div>
+                        <div class="spotlight-item">
+                            <img src="https://picsum.photos/seed/art2/100/100.jpg" alt="缩略图">
+                            <div class="spotlight-item-text">
+                                <h4>技术解析：流体模拟在动画中的应用</h4>
+                                <p>从概念到成片的全流程技术分享</p>
+                            </div>
+                        </div>
+                        <div class="spotlight-item">
+                            <img src="https://picsum.photos/seed/art3/100/100.jpg" alt="缩略图">
+                            <div class="spotlight-item-text">
+                                <h4>粉丝社群：AGE 动画迷的聚集地</h4>
+                                <p>参与讨论，分享你的解读</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News -->
+        <section id="news" class="news-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">最新资讯</h2>
+                    <a href="#" class="section-link">归档 →</a>
+                </div>
+                <div class="news-list">
+                    <article class="news-item">
+                        <time class="news-date">2023-10-15</time>
+                        <h3 class="news-title">AGE Studio 新作《虚空行者》定档 12 月首映</h3>
+                        <span class="news-arrow">→</span>
+                    </article>
+                    <article class="news-item">
+                        <time class="news-date">2023-09-28</time>
+                        <h3 class="news-title">年度动画展映活动：AGE 作品专场回顾</h3>
+                        <span class="news-arrow">→</span>
+                    </article>
+                    <article class="news-item">
+                        <time class="news-date">2023-08-10</time>
+                        <h3 class="news-title">工作室招募：寻找具有实验精神的动画师</h3>
+                        <span class="news-arrow">→</span>
+                    </article>
+                    <article class="news-item">
+                        <time class="news-date">2023-07-22</time>
+                        <h3 class="news-title">AGE 动画官方周边商店上线，限量发售手办</h3>
+                        <span class="news-arrow">→</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="display:block; margin-bottom:15px;">AGE<span>ANIME</span></a>
+                    <p>致力于推动独立动画艺术的发展，探索视觉语言的新边界。</p>
+                    <p>© 2023 AGE Animation Studio. All rights reserved.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>作品鉴赏</h4>
+                    <ul>
+                        <li><a href="#">赛博朋克系列</a></li>
+                        <li><a href="#">实验短片集</a></li>
+                        <li><a href="#">年度精选</a></li>
+                        <li><a href="#">幕后花絮</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">工作室简介</a></li>
+                        <li><a href="#">团队成员</a></li>
+                        <li><a href="#">合作提案</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微博</a></li>
+                        <li><a href="#">Bilibili</a></li>
+                        <li><a href="#">Twitter / X</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>本网站仅用于展示 AGE 动画工作室的相关作品与信息，不包含任何版权争议内容。所有图片均为概念演示。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的平滑滚动脚本
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // 减去头部高度
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // 移动端菜单切换逻辑
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('nav');
+        let isMenuOpen = false;
+
+        mobileMenuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                nav.style.display = 'block';
+                nav.style.position = 'absolute';
+                nav.style.top = '100%';
+                nav.style.left = '0';
+                nav.style.width = '100%';
+                nav.style.background = '#0a0a0a';
+                nav.style.padding = '20px';
+                nav.style.borderBottom = '1px solid #333';
+            } else {
+                nav.style.display = '';
+            }
+        });
+    </script>
+</body>
+                      </html>
