@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大白菜U盘-系统启动盘制作与数据安全工具指南</title>
+    <meta name="description" content="大白菜U盘官网及工具使用指南。提供大白菜U盘启动盘制作教程、PE系统下载、系统重装方法及U盘数据恢复教程，解决电脑无法开机、系统崩溃等问题。">
+    <meta name="keywords" content="大白菜U盘, 大白菜PE, U盘启动盘制作, 系统重装, U盘装系统">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --accent-hover: #2980b9;
+            --bg-color: #f5f7fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e1e4e8;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+            border: 1px solid var(--accent-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            border-color: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 1rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-main);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .hero-visual {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .step-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            width: 280px;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: var(--accent-color);
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: rgba(52, 152, 219, 0.1);
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            line-height: 1;
+        }
+
+        .step-card h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .step-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: var(--card-bg);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-item {
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            background-color: var(--bg-color);
+            transition: transform 0.3s;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(52, 152, 219, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .feature-item h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        /* Download Section */
+        .download-section {
+            padding: 80px 0;
+        }
+
+        .download-card {
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: var(--radius-lg);
+            padding: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .download-info h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .download-info p {
+            opacity: 0.9;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .download-stats {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .stat-item h4 {
+            font-size: 2rem;
+            color: var(--accent-color);
+        }
+
+        .stat-item span {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .download-btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-white {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        .btn-white:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Guide Section */
+        .guide-section {
+            padding: 80px 0;
+            background-color: var(--card-bg);
+        }
+
+        .guide-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            border-radius: 20px;
+            background-color: var(--bg-color);
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .guide-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+        }
+
+        .step-block h3 {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .step-block ol {
+            padding-left: 20px;
+        }
+
+        .step-block li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 15px;
+            color: var(--text-secondary);
+        }
+
+        .step-block li::marker {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .tip-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin-top: 20px;
+            border-radius: 4px;
+            color: #856404;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+        }
+
+        .faq-item {
+            background-color: var(--card-bg);
+            border-radius: var(--radius-md);
+            padding: 25px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .faq-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .faq-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: rgba(255,255,255,0.7);
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                height: 60px;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--card-bg);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: var(--shadow-md);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .download-card {
+                padding: 40px 20px;
+                text-align: center;
+            }
+
+            .download-stats {
+                justify-content: center;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7V12C2 17.52 5.84 22.74 12 24C18.16 22.74 22 17.52 22 12V7L12 2Z" fill="#3498db"/>
+                    <path d="M12 6L6 9.5V12C6 15.5 8.5 18.8 12 20C15.5 18.8 18 15.5 18 12V9.5L12 6Z" fill="white"/>
+                </svg>
+                大白菜<span>U盘</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#download">工具下载</a></li>
+                    <li><a href="#guide">制作教程</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                    <li><a href="#about">关于我们</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#download" class="btn btn-primary">立即制作</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>大白菜U盘启动盘制作工具</h1>
+                <p>简单三步，让您的U盘变身系统维护利器。支持Windows系统重装、PE系统引导、数据恢复，解决电脑无法开机、蓝屏、病毒感染等常见问题。</p>
+                <div class="hero-buttons">
+                    <a href="#download" class="btn btn-primary">下载最新版</a>
+                    <a href="#guide" class="btn btn-outline">查看教程</a>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="step-card">
+                        <span class="step-number">01</span>
+                        <h3>下载工具</h3>
+                        <p>获取官方正版大白菜U盘制作工具，确保系统安全与兼容性。</p>
+                    </div>
+                    <div class="step-card">
+                        <span class="step-number">02</span>
+                        <h3>插入U盘</h3>
+                        <p>将U盘插入电脑USB接口，工具会自动识别存储设备。</p>
+                    </div>
+                    <div class="step-card">
+                        <span class="step-number">03</span>
+                        <h3>一键制作</h3>
+                        <p>点击一键制作，等待进度完成，即可获得可启动的PE系统。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>大白菜U盘功能特点</h2>
+                    <p>专为个人用户和IT技术人员设计，功能全面，操作简便。</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                        </div>
+                        <h3>纯净无广告</h3>
+                        <p>软件界面简洁，无任何第三方广告弹窗，专注工具本身，保护您的隐私与电脑安全。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <h3>极速启动</h3>
+                        <p>优化内核，支持UEFI与Legacy双模式启动，兼容绝大多数新旧主板，开机速度更快。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                        </div>
+                        <h3>万能兼容</h3>
+                        <p>支持NTFS、FAT32、exFAT等常见文件系统，完美适配Windows 10/11及各类品牌电脑。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <h3>数据安全</h3>
+                        <p>提供数据备份与恢复功能，制作过程中自动检测U盘状态，防止数据意外丢失。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section id="download" class="download-section">
+            <div class="container">
+                <div class="download-card">
+                    <div class="download-info">
+                        <h2>大白菜U盘启动盘制作工具 V3.0</h2>
+                        <p>支持Windows 11/10/8/7系统，集成最新PE系统内核，新增图形化界面，操作更简单。</p>
+                        
+                        <div class="download-stats">
+                            <div class="stat-item">
+                                <h4>10M+</h4>
+                                <span>月下载量</span>
+                            </div>
+                            <div class="stat-item">
+                                <h4>4.9</h4>
+                                <span>用户评分</span>
+                            </div>
+                            <div class="stat-item">
+                                <h4>2023</h4>
+                                <span>最新版</span>
+                            </div>
+                        </div>
+
+                        <div class="download-btn-group">
+                            <button class="btn btn-white" onclick="startDownload()">立即下载</button>
+                            <button class="btn btn-outline" style="border-color: rgba(255,255,255,0.3); color: white;">查看更新日志</button>
+                        </div>
+                    </div>
+                    <div style="flex: 1; max-width: 300px;">
+                        <svg width="100%" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="40" y="40" width="120" height="120" rx="10" fill="white" fill-opacity="0.2"/>
+                            <rect x="60" y="60" width="80" height="80" rx="4" fill="white"/>
+                            <rect x="75" y="75" width="50" height="50" rx="2" fill="#3498db"/>
+                            <circle cx="100" cy="100" r="15" fill="white"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="guide-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>详细制作教程</h2>
+                    <p>即使是没有电脑基础的用户，也能轻松完成大白菜U盘启动盘的制作。</p>
+                </div>
+
+                <div class="guide-tabs">
+                    <button class="tab-btn active" onclick="openTab(event, 'win10')">Windows 10/11</button>
+                    <button class="tab-btn" onclick="openTab(event, 'legacy')">传统BIOS</button>
+                    <button class="tab-btn" onclick="openTab(event, 'reinstall')">系统重装</button>
+                </div>
+
+                <div id="win10" class="tab-content active">
+                    <div class="guide-steps">
+                        <div class="step-block">
+                            <h3>步骤一：准备工作</h3>
+                            <ol>
+                                <li>准备一个容量大于4GB的U盘，并备份U盘内所有重要数据（制作过程会格式化U盘）。</li>
+                                <li>下载并安装大白菜U盘启动盘制作工具。</li>
+                                <li>将U盘插入电脑USB接口，打开软件。</li>
+                            </ol>
+                            <div class="tip-box">
+                                <strong>提示：</strong> 确保U盘没有被写保护，且电脑杀毒软件未拦截软件运行。
+                            </div>
+                        </div>
+                        <div class="step-block">
+                            <h3>步骤二：选择启动模式</h3>
+                            <ol>
+                                <li>在软件主界面，选择“U盘启动”选项卡。</li>
+                                <li>点击“一键制作”按钮。</li>
+                                <li>在弹出的警告框中确认U盘信息，点击“确定”。</li>
+                                <li>等待制作进度条走完，提示“制作成功”。</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="legacy" class="tab-content">
+                    <div class="guide-steps">
+                        <div class="step-block">
+                            <h3>设置电脑启动项</h3>
+                            <ol>
+                                <li>插入制作好的大白菜U盘，重启电脑。</li>
+                                <li>开机时连续按F11、F12、Del或Esc键（具体按键因主板品牌而异）进入Boot Menu。</li>
+                                <li>在启动菜单中选择带有“USB”字样的设备。</li>
+                                <li>进入大白菜PE系统界面，即可开始使用。</li>
+                            </ol>
+                        </div>
+                        <div class="step-block">
+                            <h3>BIOS设置方法</h3>
+                            <ol>
+                                <li>重启电脑，按下Del或F2键进入BIOS设置。</li>
+                                <li>在“Boot”选项卡下，将“USB Storage Devices”设置为第一启动项。</li>
+                                <li>按F10保存并重启。</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="reinstall" class="tab-content">
+                    <div class="guide-steps">
+                        <div class="step-block">
+                            <h3>准备工作</h3>
+                            <p>确保电脑能正常开机进入BIOS，准备好Windows 10/11的ISO镜像文件。</p>
+                        </div>
+                        <div class="step-block">
+                            <h3>重装步骤</h3>
+                            <ol>
+                                <li>进入大白菜PE系统，打开“DiskGenius”分区工具，对硬盘进行分区。</li>
+                                <li>打开“大白菜PE装机版”，选择“安装系统”。</li>
+                                <li>选择之前下载的ISO镜像文件，点击“执行”。</li>
+                                <li>等待自动重启安装，直至系统安装完成。</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>大白菜U盘启动盘能用来装系统吗？</h3>
+                        <p>可以。大白菜U盘启动盘集成了PE系统，是装系统、修复系统、备份数据的常用工具。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>制作失败怎么办？</h3>
+                        <p>请检查U盘是否被写保护，尝试更换USB接口，或使用DiskGenius彻底格式化U盘后重试。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>制作好的U盘容量变小了？</h3>
+                        <p>这是因为制作过程将U盘格式化为启动分区，实际容量并未减少，请勿惊慌。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>如何从大白菜U盘启动？</h3>
+                        <p>插入U盘开机，根据屏幕提示按下F11或F12进入启动菜单，选择USB启动项即可。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>下载的软件安全吗？</h3>
+                        <p>本站提供的软件均为官方渠道获取，经过安全检测，无毒无广告，请放心下载使用。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>支持Mac系统吗？</h3>
+                        <p>大白菜主要针对Windows平台设计，目前不支持在macOS系统上直接制作启动盘。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="about">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于大白菜</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">大白菜致力于为用户提供简单、安全、高效的电脑维护解决方案。从启动盘制作到系统重装，我们始终站在用户角度，提供最优质的服务。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#download">工具下载</a></li>
+                        <li><a href="#guide">使用教程</a></li>
+                        <li><a href="#faq">帮助中心</a></li>
+                        <li><a href="#">更新日志</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>支持服务</h4>
+                    <ul>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">用户协议</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <p style="font-size: 0.9rem; margin-top: 10px;">获取最新工具资讯与教程更新。</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 大白菜U盘制作工具. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Tab Functionality
+        function openTab(evt, tabName) {
+            var i, tabContent, tabBtn;
+            
+            // Hide all tab content
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].classList.remove("active");
+            }
+
+            // Remove active class from all buttons
+            tabBtn = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tabBtn.length; i++) {
+                tabBtn[i].classList.remove("active");
+            }
+
+            // Show current tab and add active class to button
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        // Download Interaction Simulation
+        function startDownload() {
+            const btn = document.querySelector('.btn-white');
+            const originalText = btn.innerText;
+            btn.innerText = "正在准备下载...";
+            btn.style.backgroundColor = "#e0e0e0";
+            
+            setTimeout(() => {
+                btn.innerText = "下载已开始";
+                btn.style.backgroundColor = "#27ae60";
+                // In a real scenario, this would trigger the file download
+                console.log("Download initiated");
+                
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.style.backgroundColor = "white";
+                }, 3000);
+            }, 1000);
+        }
+    </script>
+</body>
+                              </html>
