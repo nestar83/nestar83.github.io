@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="桃花红杏花白 - 乡村民谣文化与经典歌曲欣赏平台。提供歌曲介绍、歌词赏析、创作背景及相关音乐视频资源，感受黄土高原的质朴情感。">
+    <meta name="keywords" content="桃花红杏花白, 陕北民歌, 乡村民谣, 王向荣, 贺玉建, 歌词, 民歌欣赏">
+    <title>桃花红杏花白 - 经典陕北民歌与乡村民谣文化赏析</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8B4513;
+            --secondary-color: #D2691E;
+            --accent-color: #F4A460;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #FAFAF5;
+            --bg-white: #FFFFFF;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(139, 69, 19, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: normal;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #FFEFBA 0%, #FFFFFF 100%);
+            padding: 4rem 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 20% 30%, rgba(210, 105, 30, 0.1) 0%, transparent 20%),
+                              radial-gradient(circle at 80% 70%, rgba(255, 182, 193, 0.1) 0%, transparent 20%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: rgba(139, 69, 19, 0.1);
+            color: var(--primary-color);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 5px solid var(--secondary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        /* Song List Cards */
+        .song-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .song-card {
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .song-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(139, 69, 19, 0.15);
+        }
+
+        .card-img-placeholder {
+            width: 100%;
+            height: 180px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 3rem;
+            position: relative;
+        }
+        
+        .card-img-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .card-meta {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn-play {
+            display: inline-block;
+            width: 100%;
+            padding: 0.6rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .btn-play:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .info-box {
+            background: var(--bg-white);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .info-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+
+        .lyric-preview {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            text-indent: 2em;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .source-list li {
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .source-list a {
+            display: flex;
+            align-items: center;
+            color: var(--text-dark);
+            transition: color 0.2s;
+        }
+
+        .source-list a:hover {
+            color: var(--secondary-color);
+        }
+
+        .source-list span {
+            margin-right: 8px;
+            color: #ccc;
+            font-size: 0.8rem;
+        }
+
+        /* Feature Section (Culture) */
+        .culture-section {
+            background-color: var(--bg-white);
+            padding: 3rem 20px;
+            margin-top: 2rem;
+        }
+
+        .culture-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .culture-text h2 {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .culture-text p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .culture-visual {
+            width: 100%;
+            height: 300px;
+            background-color: #e0e0e0;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 1.5rem;
+        }
+        
+        .culture-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c2c2c;
+            color: #ccc;
+            padding: 3rem 20px;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .culture-content {
+                grid-template-columns: 1fr;
+            }
+
+            .culture-visual {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                🌸 桃花红杏花白
+                <span>民谣文化网</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#songs">歌曲欣赏</a></li>
+                    <li><a href="#culture">文化背景</a></li>
+                    <li><a href="#lyrics">歌词赏析</a></li>
+                    <li><a href="#artists">艺术家</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>桃花红 杏花白</h1>
+                <p>源自黄土高原的深情旋律，传唱百年的经典民歌。在这里，感受质朴情感与自然风光的完美融合。</p>
+                <div class="hero-tags">
+                    <span class="tag">陕北民歌</span>
+                    <span class="tag">王向荣</span>
+                    <span class="tag">贺玉建</span>
+                    <span class="tag">爱情歌曲</span>
+                    <span class="tag">小调</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Left Column: Songs -->
+            <section id="songs">
+                <h2 class="section-title">热门演绎与版本</h2>
+                <div class="song-grid">
+                    <!-- Song Card 1 -->
+                    <article class="song-card">
+                        <div class="card-img-placeholder">
+                            <img src="https://picsum.photos/seed/pink/400/300" alt="桃花红杏花白封面">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">桃花红杏花白</h3>
+                            <div class="card-meta">
+                                <span>王向荣 / 贺玉建</span>
+                                <span>经典原版</span>
+                            </div>
+                            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">
+                                这是最广为流传的版本之一，由著名民歌手王向荣、贺玉建合唱。旋律悠扬，情感真挚，展现了陕北高原的壮美与儿女情长。
+                            </p>
+                            <a href="#" class="btn-play">播放欣赏</a>
+                        </div>
+                    </article>
+
+                    <!-- Song Card 2 -->
+                    <article class="song-card">
+                        <div class="card-img-placeholder">
+                            <img src="https://picsum.photos/seed/flowers/400/300" alt="民歌演唱">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">桃花红杏花白（变奏）</h3>
+                            <div class="card-meta">
+                                <span>阿宝</span>
+                                <span>流行改编</span>
+                            </div>
+                            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">
+                                融入了流行音乐的元素，保留了民歌的韵味，更适合现代年轻人的听觉习惯。
+                            </p>
+                            <a href="#" class="btn-play">播放欣赏</a>
+                        </div>
+                    </article>
+
+                    <!-- Song Card 3 -->
+                    <article class="song-card">
+                        <div class="card-img-placeholder">
+                            <img src="https://picsum.photos/seed/singing/400/300" alt="传统小调">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">传统小调版</h3>
+                            <div class="card-meta">
+                                <span>民间艺人</span>
+                                <span>原生态</span>
+                            </div>
+                            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">
+                                保留了最原始的演唱方式，没有过多的修饰，直击人心，展现了民歌最本真的生命力。
+                            </p>
+                            <a href="#" class="btn-play">播放欣赏</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Right Column: Sidebar -->
+            <aside>
+                <div class="info-box">
+                    <h3>歌曲简介</h3>
+                    <p class="lyric-preview">
+                        “桃花来那个红来杏花来那个白，翻山越岭我来把你爱...”<br>
+                        这是一首流传于山西、陕西、河北等地的山歌小调。歌词借景抒情，以“桃花红、杏花白”描绘出春天的生机勃勃，同时表达了青年男女之间纯真、热烈的爱情。
+                    </p>
+                    <a href="#lyrics" style="color: var(--secondary-color); font-weight: bold;">查看完整歌词 &rarr;</a>
+                </div>
+
+                <div class="info-box">
+                    <h3>推荐艺术家</h3>
+                    <ul class="source-list">
+                        <li><a href="#"><span>#01</span> 王向荣</a></li>
+                        <li><a href="#"><span>#02</span> 贺玉建</a></li>
+                        <li><a href="#"><span>#03</span> 阿宝</a></li>
+                        <li><a href="#"><span>#04</span> 石占明</a></li>
+                        <li><a href="#"><span>#05</span> 谭维维</a></li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h3>相关分类</h3>
+                    <ul class="source-list">
+                        <li><a href="#">👉 陕北民歌</a></li>
+                        <li><a href="#">👉 山西民歌</a></li>
+                        <li><a href="#">👉 情歌对唱</a></li>
+                        <li><a href="#">👉 原生态音乐</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Culture Section -->
+        <section id="culture" class="culture-section">
+            <div class="culture-content">
+                <div class="culture-visual">
+                    <img src="https://picsum.photos/seed/plateau/600/400" alt="黄土高原风光">
+                </div>
+                <div class="culture-text">
+                    <h2>黄土高原的深情旋律</h2>
+                    <p>《桃花红杏花白》不仅仅是一首歌曲，它是陕北人民情感生活的缩影。在这片沟壑纵横的土地上，民歌是人们表达爱意、倾诉衷肠最直接的方式。</p>
+                    <p>歌曲旋律采用了五声调式，起伏跌宕，既有高亢嘹亮的“信天游”风格，又兼具细腻婉转的“小调”韵味。它反映了当地独特的地理环境和人们豪爽、质朴的性格特征。</p>
+                    <p>无论是在田间劳作的间隙，还是在节日庆典的舞台上，这首歌都能引起人们强烈的共鸣，成为连接过去与现在、人与人之间情感的桥梁。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于民歌网</h4>
+                <p style="font-size: 0.9rem; color: #999;">
+                    致力于弘扬中国民间音乐文化，收录经典民歌、民谣及传统小调，为用户提供优质的在线欣赏体验。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>热门栏目</h4>
+                <ul>
+                    <li><a href="#">陕北民歌</a></li>
+                    <li><a href="#">山西小调</a></li>
+                    <li><a href="#">花儿会</a></li>
+                    <li><a href="#">经典老歌</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>帮助与支持</h4>
+                <ul>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">用户协议</a></li>
+                    <li><a href="#">联系站长</a></li>
+                    <li><a href="#">投稿指南</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 民歌文化网保留所有权利. 非商业用途仅供学习交流.
+        </div>
+    </footer>
+
+</body>
+  </html>
