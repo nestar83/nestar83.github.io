@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动漫人体 - 精准人体结构与动态速写教学指南</title>
+    <meta name="description" content="本站提供专业的动漫人体结构解析、人体比例参考、动态速写技巧及人体绘画教程，帮助画师掌握人体绘画的核心规律，提升角色设计能力。">
+    <meta name="keywords" content="动漫人体,人体结构,动态速写,绘画教程,人体比例,角色设计,二次元人体">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --secondary-color: #8b5cf6;
+            --accent-color: #f43f5e;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-sub: #64748b;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-sub);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            display: flex;
+            background: var(--bg-color);
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            width: 200px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: white;
+            color: var(--primary-color);
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-weight: 700;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        /* Section Titles */
+        .section-header {
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+            color: var(--text-main);
+        }
+
+        /* Grid Layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid #e2e8f0;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            background-color: #e2e8f0;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            color: var(--primary-color);
+            background: #eff6ff;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .card-desc {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.875rem;
+            color: var(--text-sub);
+        }
+
+        /* Tutorial Detail Style */
+        .tutorial-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            align-items: flex-start;
+        }
+
+        .tutorial-content {
+            flex: 1;
+        }
+
+        .tutorial-visual {
+            flex: 1;
+            background: #e2e8f0;
+            border-radius: var(--border-radius);
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-sub);
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tutorial-visual::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 50%, rgba(255,255,255,0.5) 50%);
+            background-size: 100% 4px;
+            pointer-events: none;
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: rgba(59, 130, 246, 0.1);
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            line-height: 1;
+        }
+
+        /* Anatomy Section */
+        .anatomy-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .anatomy-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .anatomy-box h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .anatomy-box p {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-sub);
+            display: none;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 1rem;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e293b;
+            color: #cbd5e1;
+            padding: 3rem 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid #334155;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Simplified for mobile */
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .tutorial-item {
+                flex-direction: column;
+            }
+            .anatomy-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+                <span>动漫人体</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#structure">结构解析</a>
+                <a href="#dynamic">动态速写</a>
+                <a href="#tools">工具推荐</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索人体比例...">
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>掌握二次元人体绘画的核心规律</h1>
+        <p>从基础头身比到复杂的动态速写，我们提供系统化的解剖学知识与实战技巧，助你画出更有张力、更符合人体工学的角色。</p>
+        <a href="#structure" class="cta-btn">开始学习</a>
+    </section>
+
+    <main class="container">
+        
+        <!-- Intro Section -->
+        <section style="margin-bottom: 4rem;">
+            <div class="section-header">
+                <h2>为什么学习人体结构至关重要？</h2>
+            </div>
+            <p style="max-width: 800px; font-size: 1.1rem; color: var(--text-sub);">
+                在动漫和插画创作中，准确的人体结构是角色的灵魂。很多画师在追求风格化的过程中容易忽略基础，导致人体比例失调、关节扭曲或动作僵硬。本站旨在通过科学的比例参考和简化模型，帮助你理解人体内部的骨骼与肌肉走向，从而在二次元的夸张表现中依然保持真实感。
+            </p>
+        </section>
+
+        <!-- Core Concepts Grid -->
+        <section id="structure">
+            <div class="section-header">
+                <h2>核心人体比例参考</h2>
+            </div>
+            <div class="grid-3">
+                <article class="card">
+                    <div class="card-body">
+                        <span class="card-tag">基础比例</span>
+                        <h3 class="card-title">标准头身比</h3>
+                        <p class="card-desc">了解不同类型角色的头身设定。标准成人通常为7-8头身，Q版为3-4头身。掌握头部在身体中的定位是画准比例的第一步。</p>
+                        <div class="card-footer">
+                            <span>阅读时间：3分钟</span>
+                            <span>进阶</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-body">
+                        <span class="card-tag">骨骼关键点</span>
+                        <h3 class="card-title">关节定位法</h3>
+                        <p class="card-desc">不要死记硬背肌肉，要抓住骨骼。通过锁骨、大臂、肘部、手腕等关键点串联，用简单的几何体概括人体，提高修改效率。</p>
+                        <div class="card-footer">
+                            <span>阅读时间：5分钟</span>
+                            <span>必读</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-body">
+                        <span class="card-tag">透视应用</span>
+                        <h3 class="card-title">人体三视图</h3>
+                        <p class="card-desc">正面、侧面与背面。理解如何通过三视图来构建立体的空间感，避免画出来的角色像纸片一样平。</p>
+                        <div class="card-footer">
+                            <span>阅读时间：4分钟</span>
+                            <span>新手</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Dynamic Drawing Section -->
+        <section id="dynamic" style="margin-top: 5rem;">
+            <div class="section-header">
+                <h2>动态速写与肢体语言</h2>
+            </div>
+            <div class="grid-2">
+                <article class="tutorial-item">
+                    <div class="tutorial-content">
+                        <span class="card-tag">动态线</span>
+                        <h3 class="card-title">抓取主要动态线</h3>
+                        <p class="card-desc">在画动态人物时，首先要找到人物的“脊柱”或重心线。这条线决定了动作的起伏、倾斜和运动趋势。动态线应该贯穿全身，连接头部和骨盆。</p>
+                        <p class="card-desc" style="margin-top: 0.5rem;">训练方法：在观察照片时，尝试用一条快速流畅的线条概括整个人体的姿态。</p>
+                    </div>
+                    <div class="tutorial-visual">
+                        <span class="step-number">01</span>
+                        <span>动态线示意图</span>
+                    </div>
+                </article>
+                <article class="tutorial-item">
+                    <div class="tutorial-content">
+                        <span class="card-tag">肢体语言</span>
+                        <h3 class="card-title">通过肢体表达情绪</h3>
+                        <p class="card-desc">肩膀的紧张程度、手臂的伸展方向、膝盖的弯曲角度，都能传达出角色的心理状态。例如，双臂抱胸通常表示防御或抗拒，而舒展的肢体则表示放松或自信。</p>
+                    </div>
+                    <div class="tutorial-visual">
+                        <span class="step-number">02</span>
+                        <span>情绪肢体示意图</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Anatomy Breakdown -->
+        <section style="margin-top: 5rem;">
+            <div class="section-header">
+                <h2>局部解剖与简化</h2>
+            </div>
+            <div class="anatomy-grid">
+                <div class="anatomy-box">
+                    <h3>手部绘制</h3>
+                    <p>手是动漫中极难表现的部分。建议将手掌简化为梯形，手指简化为圆柱体。注意大拇指与其他手指的朝向差异，以及手腕与手掌的连接处。</p>
+                </div>
+                <div class="anatomy-box">
+                    <h3>脚部绘制</h3>
+                    <p>脚部结构复杂，但在二次元中常被简化。注意脚踝的厚度以及脚底与地面的接触面，这决定了角色的重心稳定性。</p>
+                </div>
+                <div class="anatomy-box">
+                    <h3>腿部肌肉</h3>
+                    <p>大腿肌肉群（股四头肌、臀大肌）决定了角色的力量感。小腿的腓肠肌则影响奔跑时的线条起伏。不要画得太细，否则会显得无力。</p>
+                </div>
+                <div class="anatomy-box">
+                    <h3>头部透视</h3>
+                    <p>画脸时，注意“三庭五眼”的比例。在侧脸和仰视/俯视时，脸部的扁平程度和五官位置会发生显著变化，需运用透视原理。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Section -->
+        <section id="tools" style="margin-top: 5rem;">
+            <div class="section-header">
+                <h2>实用工具与资源</h2>
+            </div>
+            <div class="grid-3">
+                <div class="card" style="text-align: center; padding: 2rem;">
+                    <h3 style="margin-bottom: 1rem;">3D模型参考</h3>
+                    <p style="color: var(--text-sub); margin-bottom: 1rem;">使用在线3D模型库（如Sketchfab）旋转查看人体结构，解决局部记忆困难的问题。</p>
+                    <a href="#" style="color: var(--primary-color); font-weight: 600;">查看推荐模型 &rarr;</a>
+                </div>
+                <div class="card" style="text-align: center; padding: 2rem;">
+                    <h3 style="margin-bottom: 1rem;">人体速写APP</h3>
+                    <p style="color: var(--text-sub); margin-bottom: 1rem;">利用手机APP进行随机的人体结构练习，提高手眼协调能力。</p>
+                    <a href="#" style="color: var(--primary-color); font-weight: 600;">下载练习APP &rarr;</a>
+                </div>
+                <div class="card" style="text-align: center; padding: 2rem;">
+                    <h3 style="margin-bottom: 1rem;">参考图集</h3>
+                    <p style="color: var(--text-sub); margin-bottom: 1rem;">收集大量不同角度、不同风格的人体动态参考图，建立个人的素材库。</p>
+                    <a href="#" style="color: var(--primary-color); font-weight: 600;">浏览图集 &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" style="margin-top: 5rem;">
+            <div class="section-header">
+                <h2>常见问题解答</h2>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    动漫人体一定要画得很写实吗？
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    不一定。动漫人体讲究的是“结构准确，风格夸张”。在理解了真实人体结构的基础上，我们可以通过拉长比例、简化肌肉、改变关节角度来创造独特的二次元风格。但基础结构（如重心、关节连接）不能错，否则角色会显得奇怪。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    初学者应该从哪里开始练习？
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    建议从简单的几何体概括开始。练习用正方体、球体和圆柱体组合来搭建人体骨架，然后逐渐加入肌肉和皮肤细节。同时，多画火柴人（简单的线条）来练习动态和重心，是提升手感最快的方法。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    7头身和8头身有什么区别？
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    7头身通常用于普通角色或相对写实风格，给人一种稳重、成熟的感觉；8头身及以上常用于美型角色、时尚插画或幻想类作品，视觉上更显修长、优雅和富有表现力。选择哪种取决于你想要塑造的角色类型。
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>动漫人体</h4>
+                <p style="font-size: 0.9rem; color: #94a3b8;">专注于二次元人体结构与绘画技巧的分享与交流平台，帮助每一位画师突破瓶颈。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">人体比例表</a></li>
+                    <li><a href="#">动态速写教程</a></li>
+                    <li><a href="#">手部结构详解</a></li>
+                    <li><a href="#">常用姿势库</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">网站简介</a></li>
+                    <li><a href="#">投稿指南</a></li>
+                    <li><a href="#">免责声明</a></li>
+                    <li><a href="#">联系合作</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 动漫人体教学指南. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Toggle Script
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                item.querySelector('.faq-question').addEventListener('click', () => {
+                    // Close other items (optional, for accordion effect)
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+                  </html>
