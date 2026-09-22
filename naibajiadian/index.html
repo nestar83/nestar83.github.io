@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>奶爸加点-新手奶爸技能加点攻略与属性成长指南</title>
+    <meta name="description" content="本站提供奶爸加点最新攻略，涵盖新手奶爸技能选择、属性点分配技巧、副本输出手法及生存能力提升建议，助您打造最强奶爸。">
+    <meta name="keywords" content="奶爸加点,奶爸攻略,奶爸技能,奶爸属性,奶爸加点推荐">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #f5a623;
+            --accent-color: #50e3c2;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --bg-body: #f4f7f6;
+            --bg-card: #ffffff;
+            --spacing-unit: 16px;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 顶部导航 */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* 主要内容区 */
+        main {
+            padding-bottom: 60px;
+        }
+
+        /* 概述部分 */
+        .intro-section {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .intro-section h2 {
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .intro-section p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        /* 攻略网格 */
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            padding-left: 12px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-header h3 {
+            font-size: 1.2rem;
+        }
+
+        .tag {
+            background-color: #e6f7ff;
+            color: var(--primary-color);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-body p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        .skill-list {
+            margin-top: 12px;
+        }
+
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px dashed #eee;
+            font-size: 0.9rem;
+        }
+
+        .skill-item:last-child {
+            border-bottom: none;
+        }
+
+        .skill-name {
+            font-weight: 500;
+        }
+
+        .skill-val {
+            color: var(--primary-color);
+        }
+
+        /* 常见问题 FAQ */
+        .faq-section {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .faq-item {
+            margin-bottom: 16px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 16px;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            display: block;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* 简化移动端展示 */
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-inner">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path><path d="M12 12a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0v-2a5 5 0 0 1 5-5z"></path><path d="M12 22v-4"></path><path d="M8 18h8"></path></svg>
+                奶爸加点
+            </div>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#core-skills">核心技能</a>
+                <a href="#builds">加点流派</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <h1>打造最强奶爸</h1>
+            <p>从属性分配到技能连招，为您提供专业、实用的奶爸加点方案与成长指南。</p>
+        </div>
+    </div>
+
+    <main class="container">
+        <!-- 简介 -->
+        <section class="intro-section">
+            <h2>什么是“奶爸加点”？</h2>
+            <p>在各类角色扮演或策略类游戏中，“奶爸”通常指负责治疗、辅助队友的角色。而“奶爸加点”指的是玩家根据游戏机制、副本环境以及个人操作习惯，将有限的属性点（如智力、精神、力量等）和技能点投入到特定技能上，以达到最优的辅助效果。</p>
+            <p>合理的加点不仅能大幅提升团队的生存率，还能在特定高难度挑战中起到决定性作用。</p>
+        </section>
+
+        <!-- 核心技能推荐 -->
+        <section id="core-skills">
+            <h2 class="section-title">核心技能加点推荐</h2>
+            <div class="grid-container">
+                <article class="card">
+                    <div class="card-header">
+                        <h3>神圣之光</h3>
+                        <span class="tag">治疗核心</span>
+                    </div>
+                    <div class="card-body">
+                        <p>作为奶爸的招牌治疗技能，神圣之光提供群体高额回复，是应对多怪群战的基础。</p>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <span class="skill-name">推荐等级</span>
+                                <span class="skill-val">满级 (10/10)</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">加点理由</span>
+                                <span class="skill-val">优先保证</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-header">
+                        <h3>勇气祝福</h3>
+                        <span class="tag">增益Buff</span>
+                    </div>
+                    <div class="card-body">
+                        <p>提升队友的攻击力、命中率和暴击率，是团队输出的重要保障。</p>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <span class="skill-name">推荐等级</span>
+                                <span class="skill-val">优先满级</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">加点理由</span>
+                                <span class="skill-val">提升全队DPS</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-header">
+                        <h3>守护祝福</h3>
+                        <span class="tag">防御Buff</span>
+                    </div>
+                    <div class="card-body">
+                        <p>增加队友的物理和魔法防御，有效抵挡BOSS的爆发伤害。</p>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <span class="skill-name">推荐等级</span>
+                                <span class="skill-val">视情况而定</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">加点理由</span>
+                                <span class="skill-val">应对高伤副本</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 流派选择 -->
+        <section id="builds">
+            <h2 class="section-title">加点流派选择</h2>
+            <div class="grid-container">
+                <article class="card">
+                    <div class="card-header">
+                        <h3>生存流</h3>
+                        <span class="tag" style="background-color: #fff0f0; color: #d0021b;">推荐新手</span>
+                    </div>
+                    <div class="card-body">
+                        <p>侧重于提升自身防御力、闪避率以及全队减伤技能。适合操作相对简单、希望稳扎稳打的玩家。</p>
+                        <ul class="skill-list">
+                            <li class="skill-item"><span class="skill-name">核心属性</span><span class="skill-val">精神/体质</span></li>
+                            <li class="skill-item"><span class="skill-name">特色技能</span><span class="skill-val">圣盾术、神佑</span></li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-header">
+                        <h3>爆发流</h3>
+                        <span class="tag" style="background-color: #fffbe6; color: #f5a623;">进阶挑战</span>
+                    </div>
+                    <div class="card-body">
+                        <p>在保证基础治疗的前提下，大幅提升增益技能的等级，使队友在短时间内打出极限伤害。</p>
+                        <ul class="skill-list">
+                            <li class="skill-item"><span class="skill-name">核心属性</span><span class="skill-val">智力/力量</span></li>
+                            <li class="skill-item"><span class="skill-name">特色技能</span><span class="skill-val">圣光风暴、急速冷却</span></li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-header">
+                        <h3>全能流</h3>
+                        <span class="tag" style="background-color: #e6fffb; color: #50e3c2;">均衡之选</span>
+                    </div>
+                    <div class="card-body">
+                        <p>属性点平均分配，技能树全面开花。既能应对单体BOSS，也能处理群体小怪，适应性强。</p>
+                        <ul class="skill-list">
+                            <li class="skill-item"><span class="skill-name">核心属性</span><span class="skill-val">全属性均衡</span></li>
+                            <li class="skill-item"><span class="skill-name">特色技能</span><span class="skill-val">圣光普照、净化</span></li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 常见问题 FAQ -->
+        <section id="faq" class="faq-section">
+            <h2 class="section-title">新手奶爸常见问题</h2>
+            
+            <div class="faq-item">
+                <span class="faq-question">Q：奶爸加点时，应该优先加满治疗技能还是增益技能？</span>
+                <p class="faq-answer">A：通常建议优先保证核心治疗技能（如神圣之光）达到满级，以确保生存底线。在此基础上，再根据队伍配置和副本难度，适当提升增益技能等级。</p>
+            </div>
+
+            <div class="faq-item">
+                <span class="faq-question">Q：为什么我加了点之后，治疗量反而下降了？</span>
+                <p class="faq-answer">A：这可能是因为属性点分配不当，或者忽略了装备带来的治疗效果加成。建议检查你的装备词条和技能熟练度，确保“法术强度”或“治疗效果”属性充足。</p>
+            </div>
+
+            <div class="faq-item">
+                <span class="faq-question">Q：PVP和PVE的奶爸加点有什么区别？</span>
+                <p class="faq-answer">A：PVP更注重控制技能（如定身、减速）和瞬发治疗，以应对突脸；PVE则更看重范围治疗和持续Buff。本指南主要针对PVE副本环境。</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 奶爸加点攻略站. 仅供游戏参考与交流使用。</p>
+            <p>游戏内容基于虚构设定，请合理安排游戏时间。</p>
+        </div>
+    </footer>
+
+</body>
+</html>
